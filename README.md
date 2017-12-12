@@ -20,7 +20,7 @@ You can [download select2-bootstrap4-theme from this GitHub repo](https://github
 select2-bootstrap4-theme only works with Select2 v4.x. Applying the theme requires `select2-bootstrap4.css` referenced after the default `select2.css` that comes with Select2:
 
 ```html
-<link rel="stylesheet" href="dist/select2.css">
+<link rel="stylesheet" href="select2.css">
 <link rel="stylesheet" href="select2-bootstrap4.css">
 ```
 
