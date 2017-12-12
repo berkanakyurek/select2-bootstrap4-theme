@@ -1,4 +1,4 @@
-#Select2 Bootstrap4 Theme
+# Select2 Bootstrap4 Theme
 
   
 ![select2-bootstrap4-theme version](https://img.shields.io/badge/select2--bootstrap4--theme-v.1.0.0-brightgreen.svg)
