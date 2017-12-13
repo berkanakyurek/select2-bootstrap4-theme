@@ -12,8 +12,10 @@ Tested with Bootstrap v4.0.0-beta.2 and Select2 v4.0.5 in latest Chrome and Safa
 
 #### Installation
 
-You can [download select2-bootstrap4-theme from this GitHub repo](https://github.com/berkan52/select2-bootstrap4-theme/releases)
-
+* [Download the latest release](https://github.com/berkan52/select2-bootstrap4-theme/releases).
+* Clone the repo: `git clone https://github.com/berkan52/select2-bootstrap4-theme.git`.
+* Install with [Bower](http://bower.io): `bower install select2-bootstrap4-theme`.
+* Install with [npm](https://www.npmjs.com): `npm install select2-bootstrap4-theme`.
 
 #### Usage
 
