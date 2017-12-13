@@ -1,6 +1,6 @@
 {
-  "name": "Select2 Bootstrap4 Theme",
-  "description": "A theme for Select2 v4 and Bootstrap 4.0.0-beta.2",
+  "name": "select2-bootstrap4-theme",
+  "description": "A theme for Select2 v4 and Bootstrap 4",
   "keywords": [
     "bootstrap4",
     "select2",
@@ -9,6 +9,7 @@
   ],
   "homepage": "https://github.com/berkan52/select2-bootstrap4-theme",
   "main": [
+    "dist/select2-bootstrap4.css",
     "src/select2-bootstrap4.scss"
   ],
   "authors": [
