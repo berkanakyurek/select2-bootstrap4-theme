@@ -24,7 +24,7 @@
     "tests"
   ],
   "dependencies": {
-    "select2": "^4.0.0"
+    "select2": "^4.0.5"
   },
   "repository": {
     "type": "git",
