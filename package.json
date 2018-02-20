@@ -1,6 +1,6 @@
 {
   "name": "select2-bootstrap4-theme",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A theme for Select2 v4 and Bootstrap 4",
   "homepage": "https://github.com/berkan52/select2-bootstrap4-theme",
   "repository": {
@@ -19,7 +19,7 @@
   "author": "Berkan Akyürek <berkan52@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "bootstrap": "^4.0.0-beta.2",
+    "bootstrap": "^4.0.0",
     "grunt": "^1.0.1",
     "grunt-contrib-cssmin": "^2.2.1",
     "grunt-contrib-sass": "^1.0.0",

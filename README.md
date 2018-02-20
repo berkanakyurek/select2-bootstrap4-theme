@@ -9,7 +9,6 @@
 
 Tested with Bootstrap v4.0.0-beta.2 and Select2 v4.0.5 in latest Chrome and Safari (Mac).
 
-
 #### Installation
 
 * [Download the latest release](https://github.com/berkan52/select2-bootstrap4-theme/releases).
@@ -41,6 +40,10 @@ $.fn.select2.defaults.set( "theme", "bootstrap4" );
 ```
 
 #### Changelog
+
+##### Version 1.0.1
+
+* Fixed some bugs when running `npm run dev`;
 
 ##### Version 1.0.0
 
