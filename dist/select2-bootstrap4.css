@@ -1,12 +1,14 @@
 /*!
- * Select2 Bootstrap4 Theme v1.0.0 (https://github.com/berkan52/select2-bootstrap4-theme)
+ * Select2 Bootstrap4 Theme v1.0.2 (https://github.com/berkan52/select2-bootstrap4-theme)
  * 
- * A theme for Select2 v4 and Bootstrap 4.0.0-beta.2 
+ * A theme for Select2 v4 and Bootstrap 4.1.1 
  * 
- * Release v1.0.0 - 12-12-2017 
- * Copyright 2017 Berkan Akyürek <berkan52@gmail.com> 
+ * Release v1.0.2 - 13/05/2018
+ * Copyright 2017 Berkan Akyürek <berkan52@gmail.com>
+ * Latest build by djibe (with autoprefixer)
  * Licensed under MIT 
  */
+
 .select2-container--bootstrap4 {
   display: block;
 }
@@ -32,17 +34,17 @@
   outline: 0;
 }
 .select2-container--bootstrap4 .select2-search__field::-webkit-input-placeholder {
-  color: #868e96;
+  color: #6c757d;
 }
 .select2-container--bootstrap4 .select2-search__field:-moz-placeholder {
-  color: #868e96;
+  color: #6c757d;
 }
 .select2-container--bootstrap4 .select2-search__field::-moz-placeholder {
-  color: #868e96;
+  color: #6c757d;
   opacity: 1;
 }
 .select2-container--bootstrap4 .select2-search__field:-ms-input-placeholder {
-  color: #868e96;
+  color: #6c757d;
 }
 .select2-container--bootstrap4 .select2-results__option {
   padding: 0.75rem 0.375rem;
@@ -52,7 +54,7 @@
   padding: 0;
 }
 .select2-container--bootstrap4 .select2-results__option[aria-disabled=true] {
-  color: #868e96;
+  color: #6c757d;
   cursor: not-allowed;
 }
 .select2-container--bootstrap4 .select2-results__option[aria-selected=true] {
@@ -90,7 +92,7 @@
   padding-left: 2.25rem;
 }
 .select2-container--bootstrap4 .select2-results__group {
-  color: #868e96;
+  color: #6c757d;
   display: block;
   padding: 0.75rem 0.375rem;
   font-size: 75%;
@@ -98,11 +100,20 @@
   white-space: nowrap;
 }
 .select2-container--bootstrap4.select2-container--focus .select2-selection, .select2-container--bootstrap4.select2-container--open .select2-selection {
+  -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
   border-color: #80bdff;
 }
+@media screen and (prefers-reduced-motion: reduce) {
+  .select2-container--bootstrap4.select2-container--focus .select2-selection, .select2-container--bootstrap4.select2-container--open .select2-selection {
+    -webkit-transition: none;
+    transition: none;
+  }
+}
 .select2-container--bootstrap4.select2-container--open .select2-selection .select2-selection__arrow b {
-  border-color: transparent transparent #868e96 transparent;
+  border-color: transparent transparent #6c757d transparent;
   border-width: 0 0.25rem 0.25rem 0.25rem;
 }
 .select2-container--bootstrap4.select2-container--open.select2-container--below .select2-selection {
@@ -116,7 +127,7 @@
   border-top-color: transparent;
 }
 .select2-container--bootstrap4 .select2-selection__clear {
-  color: #868e96;
+  color: #6c757d;
   cursor: pointer;
   float: right;
   font-weight: bold;
@@ -166,7 +177,7 @@
   width: 0.25rem;
 }
 .select2-container--bootstrap4 .select2-selection--single .select2-selection__arrow b {
-  border-color: #868e96 transparent transparent transparent;
+  border-color: #6c757d transparent transparent transparent;
   border-style: solid;
   border-width: 0.25rem 0.25rem 0 0.25rem;
   height: 0;
@@ -182,7 +193,7 @@
   padding: 0;
 }
 .select2-container--bootstrap4 .select2-selection--single .select2-selection__placeholder {
-  color: #868e96;
+  color: #6c757d;
 }
 .select2-container--bootstrap4 .select2-selection--multiple {
   min-height: calc(2.25rem + 2px);
@@ -190,7 +201,8 @@
   height: auto;
 }
 .select2-container--bootstrap4 .select2-selection--multiple .select2-selection__rendered {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   display: block;
   line-height: 1;
   list-style: none;
@@ -202,7 +214,7 @@
   white-space: nowrap;
 }
 .select2-container--bootstrap4 .select2-selection--multiple .select2-selection__placeholder {
-  color: #868e96;
+  color: #6c757d;
   float: left;
   margin-top: 5px;
 }
@@ -225,7 +237,7 @@
   min-width: 5em;
 }
 .select2-container--bootstrap4 .select2-selection--multiple .select2-selection__choice__remove {
-  color: #868e96;
+  color: #6c757d;
   cursor: pointer;
   display: inline-block;
   font-weight: bold;
@@ -306,11 +318,11 @@
   margin-top: 1rem;
 }
 .select2-container--bootstrap4 .select2-selection.input-lg.select2-container--open .select2-selection--single .select2-selection__arrow b {
-  border-color: transparent transparent #868e96 transparent;
+  border-color: transparent transparent #6c757d transparent;
   border-width: 0 0.3125rem 0.3125rem 0.3125rem;
 }
 .input-group-lg .select2-container--bootstrap4 .select2-selection.select2-container--open .select2-selection--single .select2-selection__arrow b {
-  border-color: transparent transparent #868e96 transparent;
+  border-color: transparent transparent #6c757d transparent;
   border-width: 0 0.3125rem 0.3125rem 0.3125rem;
 }
 .select2-container--bootstrap4[dir="rtl"] .select2-selection--single {
