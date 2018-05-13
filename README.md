@@ -7,7 +7,7 @@
 
 #### Compatibility
 
-Tested with Bootstrap v4.0.0-beta.2 and Select2 v4.0.5 in latest Chrome and Safari (Mac).
+Tested with Bootstrap v4.1.1 and Select2 v4.0.6rc1 in latest Firefox, Chrome and Safari (Mac).
 
 #### Installation
 
@@ -40,6 +40,10 @@ $.fn.select2.defaults.set( "theme", "bootstrap4" );
 ```
 
 #### Changelog
+
+##### Version 1.0.2
+
+* Latest build for Bootstrap 4.1.1
 
 ##### Version 1.0.1
 
