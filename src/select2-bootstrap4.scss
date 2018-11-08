@@ -29,7 +29,7 @@ $s2bs-padding-small-horizontal: $input-btn-padding-y-sm !default;
 $s2bs-padding-base-vertical: $custom-select-padding-x !default;
 $s2bs-padding-large-vertical: $input-btn-padding-x-lg !default;
 $s2bs-padding-small-vertical: $input-btn-padding-x-sm !default;
-$s2bs-line-height: 1 !default;
+$s2bs-line-height: $custom-select-line-height !default;
 $s2bs-input-bg: $input-bg !default;
 $s2bs-input-bg-disabled: $input-disabled-bg !default;
 $s2bs-input-color: $input-color !default;
@@ -300,7 +300,7 @@ $s2bs-form-control-transition: border-color ease-in-out .15s, box-shadow ease-in
   .select2-selection--single {
     height: $s2bs-input-height-base;
     line-height: $s2bs-line-height;
-    padding: $s2bs-padding-base-vertical ($s2bs-padding-base-horizontal + $s2bs-caret-width-base*3) $s2bs-padding-base-vertical $s2bs-padding-base-horizontal;
+    padding: $custom-select-padding-y ($custom-select-padding-x + $custom-select-indicator-padding) $custom-select-padding-y $custom-select-padding-x;
 
     .select2-selection__arrow {
       position: absolute;
@@ -345,7 +345,7 @@ $s2bs-form-control-transition: border-color ease-in-out .15s, box-shadow ease-in
       list-style: none;
       margin: 0;
       overflow: hidden;
-      padding: $s2bs-padding-base-vertical $s2bs-padding-base-horizontal 0 $s2bs-padding-base-vertical;
+      padding: $custom-select-padding-y ($custom-select-padding-x + $custom-select-indicator-padding) $custom-select-padding-y $custom-select-padding-x;
       width: 100%;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -364,7 +364,7 @@ $s2bs-form-control-transition: border-color ease-in-out .15s, box-shadow ease-in
       @include border-radius($s2bs-selection-choice-border-radius);
       cursor: default;
       float: left;
-      margin: ($s2bs-padding-base-vertical - 1) 0 0 $s2bs-padding-base-horizontal/2;
+      margin: 0 0 0 $s2bs-padding-base-horizontal/2;
       padding: 0 $s2bs-padding-base-vertical;
     }
 
@@ -390,10 +390,6 @@ $s2bs-form-control-transition: border-color ease-in-out .15s, box-shadow ease-in
         color: $s2bs-remove-choice-hover-color;
       }
     }
-
-    .select2-selection__clear {
-      margin-top: $s2bs-padding-base-vertical;
-    }
   }
 
   .select2-selection--single.input-sm,
@@ -403,7 +399,6 @@ $s2bs-form-control-transition: border-color ease-in-out .15s, box-shadow ease-in
     font-size: $s2bs-font-size-small;
     height: $s2bs-input-height-small;
     line-height: $s2bs-line-height;
-    padding: $s2bs-padding-small-vertical $s2bs-padding-small-horizontal + $s2bs-caret-width-base*3 $s2bs-padding-small-vertical $s2bs-padding-small-horizontal;
 
     .select2-selection__arrow b {
       margin-left: -$s2bs-padding-small-vertical;
@@ -418,11 +413,14 @@ $s2bs-form-control-transition: border-color ease-in-out .15s, box-shadow ease-in
 
     .select2-selection__rendered
     {
-      padding: $s2bs-padding-small-vertical $s2bs-padding-small-horizontal 0 $s2bs-padding-small-vertical;
+      height: $custom-select-height-sm;
+      padding-top: $input-padding-y-sm;
+      padding-bottom: $input-padding-y-sm;
+      padding-left: $input-padding-x-sm;
+      font-size: $font-size-sm;
     }
 
     .select2-selection__choice {
-      font-size: $s2bs-font-size-small;
       line-height: $s2bs-line-height;
       margin: 0 0 0 $s2bs-padding-small-horizontal/2;
       padding: 0 $s2bs-padding-small-vertical;
@@ -433,10 +431,6 @@ $s2bs-form-control-transition: border-color ease-in-out .15s, box-shadow ease-in
       font-size: $s2bs-font-size-small;
       height: $s2bs-input-height-small - 2;
       line-height: $s2bs-line-height;
-    }
-
-    .select2-selection__clear {
-      margin-top: $s2bs-padding-small-vertical;
     }
   }
 
@@ -480,10 +474,6 @@ $s2bs-form-control-transition: border-color ease-in-out .15s, box-shadow ease-in
       font-size: $s2bs-font-size-large;
       height: $s2bs-input-height-large - 2;
       line-height: $s2bs-line-height;
-    }
-
-    .select2-selection__clear {
-      margin-top: $s2bs-padding-large-vertical;
     }
   }
 
