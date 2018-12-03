@@ -1,3 +1,5 @@
+const sass = require('node-sass');
+
 module.exports = function (grunt) {
 
     grunt.initConfig({
@@ -9,11 +11,11 @@ module.exports = function (grunt) {
                 options: {
                     position: 'top',
                     banner: '/*!\n' +
-                            ' * <%= pkg.name %> v<%= pkg.version %> (<%= pkg.homepage %>)\n' +
+                            ' * <%= pkg.niceName %> v<%= pkg.version %> (<%= pkg.homepage %>)\n' +
                             ' * \n' +
                             ' * <%= pkg.description %> \n' +
                             ' * \n' +
-                            ' * Release v<%= pkg.version %> - <%= grunt.template.today("dd-mm-yyyy") %> \n' +
+                            ' * Release v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %> \n' +
                             ' * Copyright <%= grunt.template.today("yyyy") %> <%= pkg.author %> \n' +
                             ' * Licensed under <%= pkg.license %> \n' +
                             ' */',
@@ -24,20 +26,18 @@ module.exports = function (grunt) {
                 }
             }
         },
-
         sass: {
-            build: {
-                options: {
-                    style: 'expanded',
-                    noCache: true,
-                    sourcemap: 'none'
-                },
+            options: {
+                implementation: sass,
+                outputStyle: 'expanded',
+                sourceMap: false
+            },
+            dist: {
                 files: {
                     'dist/select2-bootstrap4.css': 'src/build.scss'
                 }
             }
         },
-
         cssmin: {
             build: {
                 options: {
@@ -56,7 +56,7 @@ module.exports = function (grunt) {
     });
 
     grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-banner');
 
     grunt.registerTask('default', ['sass', 'cssmin', 'usebanner']);
