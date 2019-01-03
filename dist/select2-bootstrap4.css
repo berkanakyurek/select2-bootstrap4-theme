@@ -3,8 +3,8 @@
  * 
  * A theme for Select2 v4 and Bootstrap 4.1.1 
  * 
- * Release v1.0.3 - 2018-12-04 
- * Copyright 2018 Berkan Akyürek <berkan52@gmail.com> 
+ * Release v1.0.3 - 2019-01-03 
+ * Copyright 2019 Berkan Akyürek <berkan52@gmail.com> 
  * Licensed under MIT 
  */
 .select2-container--bootstrap4 {
@@ -149,6 +149,10 @@
 
 .select2-container--bootstrap4 .select2-selection__clear {
   margin-top: -2px;
+  padding-left: 3px;
+  padding-right: 3px;
+  margin-left: -3px;
+  margin-right: -3px;
   color: #6c757d;
   cursor: pointer;
   float: right;
@@ -220,7 +224,8 @@
 
 .select2-container--bootstrap4 .select2-selection--single .select2-selection__rendered {
   flex-grow: 1;
-  padding: 0;
+  padding: 0 3px 0 0;
+  margin-right: -3px;
   color: #495057;
 }
 

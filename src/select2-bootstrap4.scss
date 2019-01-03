@@ -249,6 +249,10 @@ $s2bs-form-control-transition: border-color ease-in-out .15s, box-shadow ease-in
 
   .select2-selection__clear {
     margin-top: -2px; //make up for lowercase line centering
+    padding-left: 3px;
+    padding-right: 3px;
+    margin-left: -3px;
+    margin-right: -3px;
     color: $s2bs-clear-selection-color;
     cursor: pointer;
     float: right;
@@ -323,7 +327,8 @@ $s2bs-form-control-transition: border-color ease-in-out .15s, box-shadow ease-in
 
     .select2-selection__rendered {
       flex-grow: 1;
-      padding: 0;
+      padding: 0 3px 0 0;
+      margin-right: -3px;
       color: $s2bs-input-color;
     }
 
