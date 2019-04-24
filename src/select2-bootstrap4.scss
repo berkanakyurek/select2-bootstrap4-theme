@@ -11,6 +11,7 @@ $s2bs-border-radius-small: $border-radius-sm !default;
 $s2bs-btn-default-bg: transparent !default;
 $s2bs-btn-default-border: $dark !default;
 $s2bs-btn-default-color: $dark !default;
+$s2bs-caret-padding: $custom-select-indicator-padding !default;
 $s2bs-caret-width-base: 0.25rem !default;
 $s2bs-caret-width-large: 0.3125rem !default;
 $s2bs-cursor-disabled: not-allowed !default;
@@ -22,10 +23,10 @@ $s2bs-dropdown-link-hover-bg: $dropdown-link-hover-bg !default;
 $s2bs-dropdown-link-hover-color: $dropdown-link-hover-color !default;
 $s2bs-font-size-base: $font-size-base !default;
 $s2bs-font-size-large: $font-size-lg !default;
-$s2bs-font-size-small: $custom-select-font-size-sm !default;
+$s2bs-font-size-small: $font-size-sm !default;
 $s2bs-padding-base-horizontal: $custom-select-padding-x !default;
-$s2bs-padding-large-horizontal: $input-btn-padding-x-lg !default;
-$s2bs-padding-small-horizontal: $input-btn-padding-x-sm !default;
+$s2bs-padding-large-horizontal: $input-padding-x-lg !default;
+$s2bs-padding-small-horizontal: $input-padding-x-sm !default;
 $s2bs-padding-base-vertical: $custom-select-padding-y !default;
 $s2bs-padding-large-vertical: $input-btn-padding-y-lg !default;
 $s2bs-padding-small-vertical: $input-btn-padding-y-sm !default;
@@ -35,7 +36,7 @@ $s2bs-input-bg-disabled: $input-disabled-bg !default;
 $s2bs-input-color: $input-color !default;
 $s2bs-input-color-placeholder: $input-placeholder-color !default;
 $s2bs-input-border: $input-border-color !default;
-$s2bs-input-border-width: $input-btn-border-width !default;
+$s2bs-input-border-width: $input-border-width !default;
 $s2bs-input-border-focus: $input-focus-border-color !default;
 $s2bs-input-border-radius: $input-border-radius !default;
 $s2bs-input-height-base: $input-height !default;
@@ -247,11 +248,15 @@ $s2bs-form-control-transition: border-color ease-in-out .15s, box-shadow ease-in
 
 
   .select2-selection__clear {
+    margin-top: -2px; //make up for lowercase line centering
+    padding-left: 3px;
+    padding-right: 3px;
+    margin-left: -3px;
+    margin-right: -3px;
     color: $s2bs-clear-selection-color;
     cursor: pointer;
     float: right;
     font-weight: bold;
-    margin-right: 10px;
 
     &:hover {
       color: $s2bs-clear-selection-hover-color;
@@ -298,34 +303,33 @@ $s2bs-form-control-transition: border-color ease-in-out .15s, box-shadow ease-in
   }
 
   .select2-selection--single {
+    display: flex;
+    align-items: center;
     height: $s2bs-input-height-base;
     line-height: $s2bs-line-height;
-    padding: $custom-select-padding-y ($custom-select-padding-x + $custom-select-indicator-padding) $custom-select-padding-y $custom-select-padding-x;
+    padding: 0 ($s2bs-padding-base-horizontal + $s2bs-caret-padding) 0 $s2bs-padding-base-horizontal;
 
     .select2-selection__arrow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       position: absolute;
+      top: 0;
       bottom: 0;
       right: $s2bs-padding-base-horizontal;
-      top: 0;
-      width: $s2bs-caret-width-base;
 
       b {
         border-color: $s2bs-dropdown-arrow-color transparent transparent transparent;
         border-style: solid;
         border-width: $s2bs-caret-width-base $s2bs-caret-width-base 0 $s2bs-caret-width-base;
-        height: 0;
-        left: 0;
-        margin-left: -$s2bs-caret-width-base;
-        margin-top: -$s2bs-caret-width-base/2;
-        position: absolute;
-        top: 50%;
-        width: 0;
       }
     }
 
     .select2-selection__rendered {
+      flex-grow: 1;
+      padding: 0 3px 0 0;
+      margin-right: -3px;
       color: $s2bs-input-color;
-      padding: 0;
     }
 
     .select2-selection__placeholder {
@@ -337,6 +341,7 @@ $s2bs-form-control-transition: border-color ease-in-out .15s, box-shadow ease-in
     min-height: $s2bs-input-height-base;
     padding: 0;
     height: auto;
+    cursor: text;
 
     .select2-selection__rendered {
       box-sizing: border-box;
@@ -345,7 +350,7 @@ $s2bs-form-control-transition: border-color ease-in-out .15s, box-shadow ease-in
       list-style: none;
       margin: 0;
       overflow: hidden;
-      padding: $custom-select-padding-y ($custom-select-padding-x + $custom-select-indicator-padding) $custom-select-padding-y $custom-select-padding-x;
+      padding: $s2bs-padding-base-vertical $s2bs-padding-base-horizontal 0 $s2bs-padding-base-horizontal;
       width: 100%;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -357,6 +362,11 @@ $s2bs-form-control-transition: border-color ease-in-out .15s, box-shadow ease-in
       margin-top: 5px;
     }
 
+    .select2-selection__clear {
+      border: $s2bs-input-border-width solid transparent;
+      margin-bottom: calc(#{$s2bs-padding-base-horizontal/2} + 2px);
+    }
+
     .select2-selection__choice {
       color: $s2bs-input-color;
       background: $s2bs-btn-default-bg;
@@ -364,18 +374,21 @@ $s2bs-form-control-transition: border-color ease-in-out .15s, box-shadow ease-in
       @include border-radius($s2bs-selection-choice-border-radius);
       cursor: default;
       float: left;
-      margin: 0 0 0 $s2bs-padding-base-horizontal/2;
-      padding: 0 $s2bs-padding-base-vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
+      margin: 0 $s2bs-padding-base-horizontal/2 $s2bs-padding-base-horizontal/2 0;
+      padding: 0 $s2bs-padding-base-horizontal;
     }
 
     .select2-search--inline {
+      margin-bottom: $s2bs-padding-base-horizontal/2;
+
       .select2-search__field {
         background: transparent;
-        padding: 0 $s2bs-padding-base-horizontal;
-        height: $s2bs-input-height-base - 2;
+
         line-height: $s2bs-line-height;
         margin-top: 0;
-        min-width: 5em;
       }
     }
 
@@ -384,7 +397,8 @@ $s2bs-form-control-transition: border-color ease-in-out .15s, box-shadow ease-in
       cursor: pointer;
       display: inline-block;
       font-weight: bold;
-      margin-right: $s2bs-padding-base-vertical / 2;
+      margin-right: $s2bs-padding-base-horizontal / 2;
+      margin-left: -($s2bs-padding-base-horizontal / 2);
 
       &:hover {
         color: $s2bs-remove-choice-hover-color;
@@ -401,7 +415,6 @@ $s2bs-form-control-transition: border-color ease-in-out .15s, box-shadow ease-in
     line-height: $s2bs-line-height;
 
     .select2-selection__arrow b {
-      margin-left: -$s2bs-padding-small-vertical;
     }
   }
 
@@ -413,24 +426,30 @@ $s2bs-form-control-transition: border-color ease-in-out .15s, box-shadow ease-in
 
     .select2-selection__rendered
     {
-      height: $custom-select-height-sm;
-      padding-top: $input-padding-y-sm;
-      padding-bottom: $input-padding-y-sm;
-      padding-left: $input-padding-x-sm;
-      font-size: $font-size-sm;
+      padding: $s2bs-padding-small-vertical $s2bs-padding-small-horizontal 0 $s2bs-padding-small-horizontal;
+      font-size: $s2bs-font-size-small;
+    }
+
+    .select2-selection__clear {
+      margin-bottom: calc(#{$s2bs-padding-small-horizontal/2} + 2px);
     }
 
     .select2-selection__choice {
       line-height: $s2bs-line-height;
-      margin: 0 0 0 $s2bs-padding-small-horizontal/2;
-      padding: 0 $s2bs-padding-small-vertical;
+      margin: 0 $s2bs-padding-small-horizontal/2 $s2bs-padding-small-horizontal/2 0;
+      padding: 0 $s2bs-padding-small-horizontal;
     }
 
-    .select2-search--inline .select2-search__field {
-      padding: 0 $s2bs-padding-small-horizontal;
-      font-size: $s2bs-font-size-small;
-      height: $s2bs-input-height-small - 2;
-      line-height: $s2bs-line-height;
+    .select2-search--inline {
+      margin-bottom: $s2bs-padding-small-horizontal/2;
+      .select2-search__field {
+        font-size: $s2bs-font-size-small;
+      }
+    }
+
+    .select2-selection__choice__remove {
+      margin-right: $s2bs-padding-small-horizontal / 2;
+      margin-left: -($s2bs-padding-small-horizontal / 2);
     }
   }
 
@@ -441,16 +460,11 @@ $s2bs-form-control-transition: border-color ease-in-out .15s, box-shadow ease-in
     font-size: $s2bs-font-size-large;
     height: $s2bs-input-height-large;
     line-height: $s2bs-line-height;
-    padding: $s2bs-padding-large-vertical $s2bs-padding-large-horizontal + $s2bs-caret-width-large*3 $s2bs-padding-large-vertical $s2bs-padding-large-horizontal;
+    padding: $s2bs-padding-large-vertical ($s2bs-padding-large-horizontal + $s2bs-caret-padding) $s2bs-padding-large-vertical $s2bs-padding-large-horizontal;
 
     .select2-selection__arrow {
-      width: $s2bs-caret-width-large;
-
       b {
         border-width: $s2bs-caret-width-large $s2bs-caret-width-large 0 $s2bs-caret-width-large;
-        margin-left: -$s2bs-caret-width-large;
-        margin-left: -$s2bs-padding-large-vertical;
-        margin-top: -$s2bs-caret-width-large/2;
       }
     }
   }
@@ -461,19 +475,33 @@ $s2bs-form-control-transition: border-color ease-in-out .15s, box-shadow ease-in
     min-height: $s2bs-input-height-large;
     @include border-radius($s2bs-border-radius-large);
 
-    .select2-selection__choice {
+    .select2-selection__rendered
+    {
+      padding: $s2bs-padding-large-vertical $s2bs-padding-large-horizontal 0 $s2bs-padding-large-horizontal;
       font-size: $s2bs-font-size-large;
-      line-height: $s2bs-line-height;
-      @include border-radius($s2bs-selection-choice-border-radius);
-      margin: ($s2bs-padding-large-vertical - 1) 0 0 $s2bs-padding-large-horizontal/2;
-      padding: 0 $s2bs-padding-large-vertical;
     }
 
-    .select2-search--inline .select2-search__field {
-      padding: 0 $s2bs-padding-large-horizontal;
+    .select2-selection__clear {
+      margin-bottom: calc(#{$s2bs-padding-large-horizontal/2} + 2px);
+    }
+
+    .select2-selection__choice {
       font-size: $s2bs-font-size-large;
-      height: $s2bs-input-height-large - 2;
-      line-height: $s2bs-line-height;
+      margin: 0 $s2bs-padding-large-horizontal/2 $s2bs-padding-large-horizontal/2 0;
+      padding: 0 $s2bs-padding-large-horizontal;
+
+    }
+
+    .select2-search--inline {
+      margin-bottom: $s2bs-padding-large-horizontal/2;
+      .select2-search__field {
+        font-size: $s2bs-font-size-large;
+      }
+    }
+
+    .select2-selection__choice__remove {
+      margin-right: $s2bs-padding-large-horizontal / 2;
+      margin-left: -($s2bs-padding-large-horizontal / 2);
     }
   }
 
@@ -490,7 +518,7 @@ $s2bs-form-control-transition: border-color ease-in-out .15s, box-shadow ease-in
   &[dir="rtl"] {
 
     .select2-selection--single {
-      padding-left: $s2bs-padding-base-horizontal + $s2bs-caret-width-base*3;
+      padding-left: $s2bs-padding-base-horizontal + $s2bs-caret-padding;
       padding-right: $s2bs-padding-base-horizontal;
 
       .select2-selection__rendered {
