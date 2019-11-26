@@ -15,6 +15,7 @@ $s2bs-caret-padding: $custom-select-indicator-padding !default;
 $s2bs-caret-width-base: 0.25rem !default;
 $s2bs-caret-width-large: 0.3125rem !default;
 $s2bs-cursor-disabled: not-allowed !default;
+$s2bs-dropdown-bg: $dropdown-bg !default;
 $s2bs-dropdown-header-color: $dropdown-header-color !default;
 $s2bs-dropdown-link-active-bg: $dropdown-link-active-bg !default;
 $s2bs-dropdown-link-active-color: $dropdown-link-active-color !default;
@@ -291,6 +292,8 @@ $s2bs-form-control-transition: border-color ease-in-out .15s, box-shadow ease-in
     border-width: $s2bs-input-border-width;
     overflow-x: hidden;
     margin-top: -1px;
+    
+    background-color: $dropdown-bg;
 
     &--above {
       @include box-shadow($s2bs-dropdown-box-shadow-above);
