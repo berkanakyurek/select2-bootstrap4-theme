@@ -367,7 +367,7 @@ $s2bs-form-control-transition: border-color ease-in-out .15s, box-shadow ease-in
 
     .select2-selection__clear {
       border: $s2bs-input-border-width solid transparent;
-      margin-bottom: calc(#{$s2bs-padding-base-horizontal/2} + 2px);
+      margin-bottom: calc(#{$s2bs-padding-base-horizontal*0.5} + 2px);
     }
 
     .select2-selection__choice {
@@ -380,12 +380,12 @@ $s2bs-form-control-transition: border-color ease-in-out .15s, box-shadow ease-in
       overflow: hidden;
       text-overflow: ellipsis;
       max-width: 100%;
-      margin: 0 $s2bs-padding-base-horizontal/2 $s2bs-padding-base-horizontal/2 0;
+      margin: 0 $s2bs-padding-base-horizontal*0.5 $s2bs-padding-base-horizontal*0.5 0;
       padding: 0 $s2bs-padding-base-horizontal;
     }
 
     .select2-search--inline {
-      margin-bottom: $s2bs-padding-base-horizontal/2;
+      margin-bottom: $s2bs-padding-base-horizontal*0.5;
 
       .select2-search__field {
         background: transparent;
@@ -400,8 +400,8 @@ $s2bs-form-control-transition: border-color ease-in-out .15s, box-shadow ease-in
       cursor: pointer;
       display: inline-block;
       font-weight: bold;
-      margin-right: $s2bs-padding-base-horizontal / 2;
-      margin-left: -($s2bs-padding-base-horizontal / 2);
+      margin-right: $s2bs-padding-base-horizontal * 0.5;
+      margin-left: -($s2bs-padding-base-horizontal * 0.5);
 
       &:hover {
         color: $s2bs-remove-choice-hover-color;
@@ -434,25 +434,25 @@ $s2bs-form-control-transition: border-color ease-in-out .15s, box-shadow ease-in
     }
 
     .select2-selection__clear {
-      margin-bottom: calc(#{$s2bs-padding-small-horizontal/2} + 2px);
+      margin-bottom: calc(#{$s2bs-padding-small-horizontal*0.5} + 2px);
     }
 
     .select2-selection__choice {
       line-height: $s2bs-line-height;
-      margin: 0 $s2bs-padding-small-horizontal/2 $s2bs-padding-small-horizontal/2 0;
+      margin: 0 $s2bs-padding-small-horizontal*0.5 $s2bs-padding-small-horizontal*0.5 0;
       padding: 0 $s2bs-padding-small-horizontal;
     }
 
     .select2-search--inline {
-      margin-bottom: $s2bs-padding-small-horizontal/2;
+      margin-bottom: $s2bs-padding-small-horizontal*0.5;
       .select2-search__field {
         font-size: $s2bs-font-size-small;
       }
     }
 
     .select2-selection__choice__remove {
-      margin-right: $s2bs-padding-small-horizontal / 2;
-      margin-left: -($s2bs-padding-small-horizontal / 2);
+      margin-right: $s2bs-padding-small-horizontal * 0.5;
+      margin-left: -($s2bs-padding-small-horizontal * 0.5);
     }
   }
 
@@ -485,26 +485,26 @@ $s2bs-form-control-transition: border-color ease-in-out .15s, box-shadow ease-in
     }
 
     .select2-selection__clear {
-      margin-bottom: calc(#{$s2bs-padding-large-horizontal/2} + 2px);
+      margin-bottom: calc(#{$s2bs-padding-large-horizontal*0.5} + 2px);
     }
 
     .select2-selection__choice {
       font-size: $s2bs-font-size-large;
-      margin: 0 $s2bs-padding-large-horizontal/2 $s2bs-padding-large-horizontal/2 0;
+      margin: 0 $s2bs-padding-large-horizontal*0.5 $s2bs-padding-large-horizontal*0.5 0;
       padding: 0 $s2bs-padding-large-horizontal;
 
     }
 
     .select2-search--inline {
-      margin-bottom: $s2bs-padding-large-horizontal/2;
+      margin-bottom: $s2bs-padding-large-horizontal*0.5;
       .select2-search__field {
         font-size: $s2bs-font-size-large;
       }
     }
 
     .select2-selection__choice__remove {
-      margin-right: $s2bs-padding-large-horizontal / 2;
-      margin-left: -($s2bs-padding-large-horizontal / 2);
+      margin-right: $s2bs-padding-large-horizontal * 0.5;
+      margin-left: -($s2bs-padding-large-horizontal * 0.5);
     }
   }
 
@@ -553,7 +553,7 @@ $s2bs-form-control-transition: border-color ease-in-out .15s, box-shadow ease-in
 
       .select2-selection__choice {
         margin-left: 0;
-        margin-right: $s2bs-padding-base-horizontal/2;
+        margin-right: $s2bs-padding-base-horizontal*0.5;
       }
 
       .select2-selection__choice__remove {
